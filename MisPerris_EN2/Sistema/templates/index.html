@@ -1,0 +1,59 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block contenido %}
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+<script src="{% static 'prefix.js' %}" type="test/javascript"></script>
+<link rel="stylesheet" href="{% static 'css/jquery.bxslider.css' %}">
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+<div class="carrusel-social">
+        <!-- Carrusel -->
+        <div class="car">
+        <ul class="carrusel">
+            <li class="img"><img src="{% static 'img/carrusel/ag1.jpg' %}"></li>
+            <li class="img"><img src="{% static 'img/carrusel/ag3.jpg' %}"></li>
+            <li class="img"><img src="{% static 'img/carrusel/ag2.jpg' %}"></li>
+            <li class="img"><img src="{% static 'img/carrusel/altog.jpg' %}"></li>
+       </ul>	
+       </div>
+       <!--Termino Carrusel -->
+       <!-- RS -->			
+        <div class="social">
+            <a href="#"><img src="{% static 'img/iconos/f.jpg' %}"></a>
+            <a href="#"><img src="{% static 'img/iconos/i.jpg' %}"></a>
+            <a href="#"><img src="{% static 'img/iconos/m.jpg' %}"></a>
+            <a href="#"><img src="{% static 'img/iconos/g.jpg' %}"></a>
+        </div>
+        <!-- Termino RS -->
+    </div>
+    <script src="{% static 'js/codigo.js' %}"></script>
+    <!-- Termino de Carrusel - RS -->
+    <!-- cuerpo -->
+    <!-- Primera seccion -->
+    <div class="contenedor">
+        <h1>Rescate</h1>
+        <h3>ETAPA UNO</h3>
+        ________
+        <br>
+        <br>
+        <p>Rescatamos perros en situacion de peligro y/o abandono. Los rehabilitamos y los preparamos para buscarles un hogar</p>
+        <div class="pfoto1">
+            <img src="{% static 'img\t1.jpg' %}" align="right">
+        </div>		
+    </div>
+    <!--Termino primera seccion -->
+    <!-- Segunda seccion -->
+    <div class="main">
+        <img src="{% static 'img\ap.jpg' %}">
+        <h1>Crowdfunding</h1>
+        <h3>FINANCIAMIENTO</h3>
+        <br>
+        <hr width="50px">
+        <br>
+        <p>Sigue nuestras redes sociales para informarte acerca de las diversas campañas y actividades para obtener financiamiento para seguir ayudando</p>
+        <br>
+    </div>
+        <!--Termino Seguna seccion-->
+        <!-- Termino de cuerpo -->
+        <!-- Galeria de imagenes-->
+{% endblock %}

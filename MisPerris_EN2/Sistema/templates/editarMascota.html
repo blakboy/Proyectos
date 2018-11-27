@@ -1,0 +1,19 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block contenido %}
+<link rel="stylesheet" href="{% static 'css/est_regm.css' %}">
+<div class="panel">
+    <div class="titulo">
+        <h1>ACTUALIZACION</h1>
+    </div>
+    <div class="formulario">
+        <form method="post" action="" enctype="multipart/form-data">
+            <div class="contenedor-inputs">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn-enviar" value="Actualizar Mascota">
+            </div>
+        </form> 
+    </div>
+</div>   
+{% endblock %}
