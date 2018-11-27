@@ -1,0 +1,6 @@
+El proyecto tiene una base de datos la cual utiliza para almacenar los archivos
+los cuales ocupa el caché para trabajar de modo offline.
+Por lo tanto, el proyecto tiene una base de datos en MySQL otorgado por el software
+XAMPP, entonces primero debe levantar los servicios Apache y MySQL.
+Luego importar la base de datos misperris.sql adjuntada y recien habiendo hecho
+estos pasos se podra ejecutar el proyecto
