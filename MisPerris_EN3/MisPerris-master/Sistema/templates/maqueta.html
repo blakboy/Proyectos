@@ -1,0 +1,75 @@
+
+<html>
+	{% load staticfiles %}
+	{% load pwa %}
+<head>
+	{% progressive_web_app_meta %}
+	<title>Mis Perris</title>
+	<link rel="shortcut icon" href="{% static 'img/huella.png' %}">
+    <meta name="description" content="Pagina completa con Flexbox"><!--Utilizamos el descriptor en meta para apoyar la busqueda de contenidos en la web-->
+    <meta name="viewport" content="width=device-widtg, user-scalable=no, initial-scale=1.0,maximun-scale=1.0,minimun-scale=1.0"><!--las escalas indican un punto inicial, la escala maxima y minima-->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+    <body>
+  	<!-- Logo y Navegador -->
+		<header>
+			<div class="logo">
+				<img src="{% static 'img/huella.png' %}" width="150" alt="">
+				<a href="#">MIS PERRIS</a>
+			</div>
+			{% if request.user.is_authenticated %}
+				{% if user.is_staff %}					
+					<!-- Vista navegador ADMIN -->
+					<div class="navegador">
+						<div class="usuario">
+							Bienvenido &nbsp {{ user.username }}
+						</div>
+						<nav>
+							<a href="{% url 'index'%}">Inicio</a>
+							<a href="{% url 'gestionUsuarioAdmin' %}">Registro Personas</a>
+							<a href="{% url 'registroMascota' %}">Registro Mascota</a>
+							<a href="{% url 'listadoMascota' %}">Listado de Mascotas</a>
+							<a href="{% url 'logout' %}">Cerrar Sesion</a>
+						</nav>
+					</div>
+				{% else %}
+					<div class="navegador">	
+						<div class="usuario">
+							Bienvenido, {{ user.username }}
+						</div>
+					<!-- Vista navegador USUARIO -->
+						<nav>
+							<a href="{% url 'index'%}">Inicio</a>
+							<a href="{% url 'mascotaUsuario' %}">Adoptar Mascota</a>
+							<a href="{% url 'logout' %}">Cerrar Sesion</a>
+						</nav>
+					</div>
+				{% endif %}
+			{% else %}
+				<!-- Vista navegador VISITANTE -->
+				<div class="navegador">	
+					<nav>
+						<a href="{% url 'index'%}">Inicio</a>
+						<a href="{% url 'gestionUsuario' %}">Registro</a>
+						<a href="{% url 'login' %}">Ingresar</a>
+					</nav>
+				</div>
+			{% endif%}
+		</header>
+		<body>
+        	{% block contenido %}
+			{% endblock %}
+		</body>
+		<footer>
+			<div class="galeria">
+			    <div class="fotos">
+                	<div class="caja filtro"><img src="{% static 'img/footer/af1.jpg' %}" alt="Uno"></div>
+                	<div class="caja filtro"><img src="{% static 'img/footer/tf2.jpg' %}" alt="Dos"></div>
+                	<div class="caja filtro"><img src="{% static 'img/footer/tf1.jpg' %}" alt="Tres"></div>
+                	<div class="caja filtro"><img src="{% static 'img/footer/af3.jpg' %}" alt="Cinco"></div>
+            	</div>
+            </div>
+        </footer>
+        <!-- Termino de Galeria de imagenes -->
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block contenido %}
+<link rel="stylesheet" href="{% static 'css/estilos_reg.css' %}">
+<div class="panel">
+    <div class="titulo">
+        <h1>INGRESAR</h1>
+    </div>
+    <div class="formulario">
+        {% if form.errors %}
+            <p>Tu nombre de usuario o contraseña no son correctos</p>
+        {% endif %}
+        <form method="post" action="" enctype="multipart/form-data">
+            <div class="contenedor-inputs">
+                {% csrf_token %}
+                {{form.as_ul}}
+                <input type="submit" class="btn-ingreso" value="Ingresar">
+            </div>
+            <a href="{% url 'password_reset' %}" class="btn-ingreso">Olvide mi password</a>
+        </form> 
+    </div>
+</div>   
+{% endblock %}

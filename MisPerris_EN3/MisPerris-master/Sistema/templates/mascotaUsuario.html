@@ -1,0 +1,50 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block contenido %}
+<link rel="stylesheet" href="{% static 'css/estilos_ru.css' %}">
+<div class="panel">
+    <div class="titulo">
+    <h1>LISTA</h1>
+    </div>
+    <div class="formulario">
+        <div class="contenedor-inputs">        
+            <table border="1">
+                <thead>
+                    <tr>
+                            <td class="columnas">Nombre Mascota</td> 
+                            <td class="columnas">Raza Mascota</td>
+                            <td class="columnas">Descripcion Mascota</td>
+                            <td class="columnas">Foto de la Mascota</td>
+                            <td class="columnas">Estado</td> 
+                            <td class="columnas">Adopcion</td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% if mascotas %}    
+                    {% for m in mascotas %}
+                        {% if m.estadoMascota == 'Disponible' %}
+                            <tr>
+                                <td>{{ m.nombreMascota }}</td>
+                                <td>{{m.razaMascota}}</td>
+                                <td>{{m.descMascota}}</td>
+                                <td class="foto"><img src="{{m.fotoMascota.url}}" width="100px" height="50px"></td>
+                                <td>{{m.estadoMascota}}</td>
+                                <td class="boton_accion">
+                                    {% if m %}
+                                        <a class= "boton_adoptar" href="#">Adoptar</a>
+                                    {% endif %}
+                                </td>
+                     
+                            </tr>
+                        {% else %}
+                        {% endif %}
+                    {%endfor%}
+                {% else %}
+                {% endif %}
+                </tbody>
+            </table>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}

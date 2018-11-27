@@ -1,0 +1,13 @@
+{% extends "maqueta.html" %}
+{% block contenido %}
+
+    {% if user.is_authenticated %}
+        Hi &nbsp {{ user.username }}
+        <br>
+        <p><a href="{% url 'password_reset' %}">Reiniciar contraseña</a></p>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
+
+{% endblock %}
