@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.urls import reverse_lazy
 #URLS Correspondientes con las views
 #Orden:
@@ -13,7 +13,7 @@ urlpatterns=[
     url(r'registroMascota',views.registroMascota,name="registroMascota"),
     url(r'^mascota/delete/(?P<postid>\d+)/', views.delete_post, name='delete_post'),
     url(r'^mascota/update/(?P<postid>\d+)/', views.update_post, name='update_post'),
-    url(r'^mascotaUsuario',views.mascotaUsuario,name="mascotaUsuario"),
+    url(r'^mascotaapi$',views.get_Mascota_List.as_view(),name="mascotaUsuario"),
     url(r'^gestionUsuario/$',views.gestionarUsuario,name="gestionUsuario"),
     url(r'^gestionUsuarioAdmin/$',views.gestionarUsuarioAdmin,name="gestionUsuarioAdmin"),
     url(r'^login/$',views.ingresar,name="login"),
@@ -41,5 +41,6 @@ urlpatterns=[
            template_name='password_reset_complete.html',
            ),name='password_reset_complete',
            ),
-        
+    url(r'^oauth/', include('social_django.urls', namespace='social')),  # <-- Agregamos para el social login
+    #url(r'^mascotaapi$',views.get_Mascota_List.as_view()),
 ]

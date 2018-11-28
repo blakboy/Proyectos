@@ -9,6 +9,9 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.core import serializers
 import json
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import MascotaSerializer
 # Create your views here.
 
 def index(request):
@@ -154,4 +157,9 @@ def salir(request):
     logout(request)
     return redirect('index')
 
+class get_Mascota_List(APIView):
+    def get(self,request):
+        mascotas=Mascota.objects.all()
+        serialized = MascotaSerializer(mascotas,many=True)
+        return Response(serialized.data)
 
