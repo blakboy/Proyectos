@@ -5,7 +5,7 @@
 .panel{
 	background: #8A4B08;
 	width: 500px;
-	height: 500px;
+	height: 480px;
 	border: 1px;
 	float: center;
 	margin-top: 40px;
@@ -14,24 +14,32 @@
 	margin-right: auto;
 	border-radius: 15px;
 }
+hr{
+	margin-top: 5px;
+}
+
 .titulo{
 background:#E6E6E6;
 text-align: center;
 color: #000000;
 width: 70%;
-height: 40px;
+height: 10%;
 margin-right: auto;
 margin-left: auto;
 border-radius: 0px 0px 118px 118px;
+font-size: 30px;
+}
+.tit{
+text-align: center;	
 }
 .formulario{
-    padding: 8px;
+	padding: 10px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 4px;
 	margin-bottom: 10px;
 	background:#FFFF;
-	width: 400px;
+	width: 450px;
 	height: 400px;
 	font-family: "Arial Black";
 	}
@@ -39,20 +47,21 @@ body a{
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .btn-enviar{
 	color: #ffffff;
 	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
-	padding: 7px;
+	padding: 4px;
 	text-decoration: none;
 	background: #27a82f;
 	margin-left:auto;
     margin-right: auto;
 	margin-top:17px;
 	font-size: 25px;
-	width: 90%;	
+	width: 70%;	
 }
 .btn-ingreso{
 	color: #ffffff;
@@ -67,18 +76,22 @@ body a{
     margin-right: auto;
 	margin-top:30px;
 	font-size: 25px;
-	width: 90%;	
+	width: 40%;	
 }
 .contenedor-inputs{
 	margin-left: auto;
     margin-right: auto;
 	display: flex;
 	flex-direction: column;
-	height: 200px;
-	width: 100%;
+	height: 400px;
+	width: 450px;
 	text-align: left;
-	margin-top: 3px;
+	margin-top: 4px;
 
+}
+textarea{
+	width: 430px;
+	height: 100px;
 }
 .boton_eliminar{
 	color: #ffffff;
@@ -107,7 +120,7 @@ body a{
 	.panel{
 		background: #8A4B08;
 		width: 100%;
-		height: 310px;
+		height: 330px;
 		float: center;
 		border-radius: 15px;
 	}
@@ -129,51 +142,78 @@ body a{
 		margin-top: 4px;
 		margin-bottom: 10px;
 		background:#FFFF;
-		width: 300px;
-		height: 270px;
+		width: 90%;
+		height: 280px;
 		font-family: "Arial Black";
-	}
+		}
 	.contenedor-inputs{
-		margin-left: auto;
-		margin-right: auto;
 		display: flex;
 		flex-direction: column;
-		height: 200px;
-		width: 100%;
+		height: 280px;
+		width: 90%;
 		text-align: left;
-		margin-top: 3px;
+		margin-top: 1px;
 		font-size: 12px;
 	}
-	textarea{
-		width:270px;
-		height: 70px;
-		align-self: center;
-	}
 	.titulo{
-		background:#E6E6E6;
-		text-align: center;
-		color: #000000;
-		width: 70%;
-		height: 7%;
+background:#E6E6E6;
+text-align: center;
+color: #000000;
+width: 70%;
+height: 10%;
+margin-right: auto;
+margin-left: auto;
+border-radius: 0px 0px 118px 118px;
+font-size: 30px;
+}
+	.btn-enviar{
+		color: #ffffff;
+		border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		border: 0px solid #000000;
+		padding: 7px;
+		text-decoration: none;
+		background: #27a82f;
+		margin-left:auto;
 		margin-right: auto;
-		margin-left: auto;
-		border-radius: 0px 0px 118px 118px;
-		font-size: 10px;
-		}
-		.btn-enviar{
-			color: #ffffff;
-			border-radius: 10px 10px 10px 10px;
-			-moz-border-radius: 10px 10px 10px 10px;
-			-webkit-border-radius: 10px 10px 10px 10px;
-			border: 0px solid #000000;
-			padding: 7px;
-			text-decoration: none;
-			background: #27a82f;
-			margin-left:auto;
-			margin-right: auto;
-			margin-top:30px;
-			font-size: 15px;
-			text-align: center;
-			width: 43%;	
-		}
+		margin-top:17px;
+		font-size: 15px;
+		width: 90%;	
+	}
+	.githubstyle{
+		color: #ffffff;
+		border-radius: 8px 8px 8px 8px;
+		-moz-border-radius: 8px 8px 8px 8px;
+		-webkit-border-radius: 8px 8px 8px 8px;
+		border: 0px solid #000000;
+		padding: 5px;
+		text-decoration: none;
+		background: #232323;
+		margin-left:auto;
+		margin-right: auto;
+		margin-top:5px;
+		text-align: center;
+		font-family: "Arial";
+		font-size: 15px;
+		width: 180px;
+		display: flex;
+		flex-direction:row;
+
+	}
+	.btn-ingreso{
+		color: #ffffff;
+		border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		border: 0px solid #000000;
+		padding: 7px;
+		text-decoration: none;
+		background: #27a82f;
+		margin-left:auto;
+		margin-right: auto;
+		margin-top:30px;
+		font-size: 15px;
+		width: 40%;	
+	}
 }
