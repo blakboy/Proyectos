@@ -1,13 +1,35 @@
+---------------------------------------------------------------------------------------
 El proyecto tiene una base de datos la cual utiliza para almacenar los archivos
 los cuales ocupa el caché para trabajar de modo offline.
 Por lo tanto, el proyecto tiene una base de datos en MySQL otorgado por el software
 XAMPP, entonces primero debe levantar los servicios Apache y MySQL.
 Luego importar la base de datos misperris.sql adjuntada y recien habiendo hecho
 estos pasos se podra ejecutar el proyecto
-
+-------------------------------------------------------------------------------------------
 Usuarios
 Admin: vpinto / qwertyuiop
 Usuario Normal: vferrada / qwertyuiop
+---------------------------------------------------------------------------------------
+ERROR MYSQLCLIENT
+En este link se encontrara la solucion
+para poder bajar el archivo debe irse al hipervinculo "binarios no oficiales de Python para Windows"
+y en esa pagina a la seccion mysqlclient la cual la puede encontrar si apreta CTRL+F
+
+https://www.pythoniza.me/instalando-mysqlclient-en-windows/
+
+En nuestro caso nos funciono con estos
+
+mysqlclient-1.3.13-cp36-cp36m-win_amd64.whl  VICENTE
+mysqlclient-1.3.13-cp37-cp37m-win_amd64.whl  EMILIANO
+
+Segun la pagina es variante el archivo para cada computador,
+en mi caso (Vicente) probe todos hasta que me lanzo un error asi:
+
+Could not install packages due to an EnvironmentError: [Errno 2] No such file or directory: 'C:\\Users\\Mist Finer\\Downloads\\mysqlclient-1.3.13-cp36-cp36m-win_amd64.whl'
+
+A Emiliano tambien le salio ese error pero con la version 37 y ahi supimos el que nos correspondia
+luego de instalarlo no deberia tener problemas para poder ejecutarlo
+---------------------------------------------------------------------------------------
 
 Modulos a instalar
 pip install social-auth-app-django
