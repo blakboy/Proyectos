@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+   <title> API MASCOTA </title> 
+   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "> </script> 
+</head> 
+<body> 
+<div> 
+   <button class ="apireq"> haga clic en mí </button> 
+</div>
+<div id = "jsonresp" style = "margin-top: 100px"> 
+    <table border="1">
+        <thead>
+            <tr>
+                    <td class="columnas">Nombre Mascota</td> 
+                    <td class="columnas">Raza Mascota</td>
+                    <td class="columnas">Descripcion Mascota</td>
+                    <td class="columnas">Foto de la Mascota</td>
+                    <td class="columnas">Estado</td> 
+                    <td class="columnas">Adopcion</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% if mascotas %}    
+            {% for m in mascotas %}
+                {% if m.estadoMascota == 'Disponible' %}
+                    <tr>
+                        <td><span id="nombre"></span></td>
+                        <td><span id="raza"></span></span></td>
+                        <td><span id="desc"></span></span></td>
+                        <td class="foto"> <span id="foto"></span></td>
+                        <td><span id="estado"></span></td>
+                        <td class="boton_accion">
+                            {% if m %}
+                                <a class= "boton_adoptar" href="#">Adoptar</a>
+                            {% endif %}
+                        </td>
+             
+                    </tr>
+                {% else %}
+                {% endif %}
+            {%endfor%}
+        {% else %}
+        {% endif %}
+        </tbody>
+    </table>
+</div> 
+    <script type = "text / javascript"> </script> 
+</body>
+<script>
+$('.apireq').click( function() {
+    $.ajax({
+             url : "http://localhost:8000/mascotaapi",
+             dataType: "json",
+             success : function (data) {
+                      $('#nombre').text( data[1].nombreMascota);
+                      $('#raza').text( data[1].razaMascota);
+                      $('#desc').text( data[1].descMascota);
+                      $('#foto').text( data[1].fotoMascota);
+                      $('#estado').text( data[1].estadoMascota);
+                    }
+                 });
+             });</script>
+</html>
