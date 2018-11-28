@@ -15,9 +15,12 @@
                 {% csrf_token %}
                 {{form.as_ul}}
                 <input type="submit" class="btn-ingreso" value="Ingresar">
+                <hr>
+                <a  class="githubstyle" href="{% url 'social:begin' 'github' %}"><img src="{% static 'img/iconos/25231.png' %}" width="25px" height="25px">  Logearse con GitHub</a><br>
             </div>
             <a href="{% url 'password_reset' %}" class="btn-ingreso">Olvide mi password</a>
         </form> 
     </div>
+    
 </div>   
 {% endblock %}
