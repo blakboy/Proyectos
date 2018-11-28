@@ -13,3 +13,4 @@ pip install python-social-auth
 pip install django-allauth
 pip install django-progressive-web-app
 pip install djangorestframework
+pip install pipreqs
