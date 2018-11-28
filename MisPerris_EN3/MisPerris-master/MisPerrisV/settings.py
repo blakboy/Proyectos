@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # Agregamos para el login social
     'social_django',  
     'django.contrib.sites',
+    'rest_framework',
 ]
 
 #para las variables locales
