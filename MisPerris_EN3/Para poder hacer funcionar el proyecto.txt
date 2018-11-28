@@ -5,7 +5,9 @@ XAMPP, entonces primero debe levantar los servicios Apache y MySQL.
 Luego importar la base de datos misperris.sql adjuntada y recien habiendo hecho
 estos pasos se podra ejecutar el proyecto
 
-
+Usuarios
+Admin: vpinto / qwertyuiop
+Usuario Normal: vferrada / qwertyuiop
 
 Modulos a instalar
 pip install social-auth-app-django
