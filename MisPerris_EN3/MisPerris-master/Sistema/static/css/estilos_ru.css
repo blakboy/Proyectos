@@ -126,7 +126,7 @@ font-family: "Arial Black";
 	.formulario{
 			margin-top: 5px;
 			background:#FFFF;
-			width: 100%;
+			width: 95%;
 			height: 90%;
 			font-family: "Arial Black";
 			font-size: 1px;
@@ -136,12 +136,12 @@ font-family: "Arial Black";
 		flex-direction: column;
 		text-align: center;
 		height: 100%;
-		width: 100%;
+		width: 300px;
 	}
 	table{
 		margin-left: auto;
 		margin-right: auto;
-		width: 100%;
+		width: 50%;
 	}
 	td{
 		padding: 2px;
