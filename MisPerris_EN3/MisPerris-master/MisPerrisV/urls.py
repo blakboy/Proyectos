@@ -21,5 +21,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("Sistema.urls")),
-    path('', include('pwa.urls')), 
+    path('', include('pwa.urls')),
+    #necesitamos para el allauth
+    path('accounts/', include('allauth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Este codigo es esencial para poder ver las imagenes en los formularios

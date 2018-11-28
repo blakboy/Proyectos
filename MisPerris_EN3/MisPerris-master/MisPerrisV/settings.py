@@ -40,8 +40,25 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Sistema.apps.SistemaConfig',
+    #Agregamos esto para poder trabajar sin conexion
     'pwa',
+    #Agregamos esto para la api externa de facebook
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    #agregamos esta para el social login
+    # Agregamos para el login social
+    'social_django',  
+    'django.contrib.sites',
 ]
+
+#para las variables locales
+LOCAL_APPS =(
+'posts',
+'users',
+)
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +68,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Agregamos esta linea para el social login
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'MisPerrisV.urls'
@@ -66,6 +85,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <-- Agrergamos para el social login y su interaccion con los backends
+                'social_django.context_processors.login_redirect', # <-- Agregamos para el social login y su redireccion
             ],
         },
     },
@@ -88,6 +109,12 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'social_core.backends.github.GithubOAuth2',# Agregamos para el social login de github
+)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -107,6 +134,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SOCIAL_AUTH_FACEBOOK_KEY = 'key'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'key'
+
+SOCIAL_AUTH_GITHUB_KEY = '2c388dcfe9b189aa69e2'
+SOCIAL_AUTH_GITHUB_SECRET = '13f499dd0311330f9a5b29dd91783e79522bb2d4'
+
+#dejamos seteadas variables de redireccion
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'index'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
